@@ -1,10 +1,10 @@
 export interface TaskProps {
-  id: string;
-  name: string;
-  createdAt: Date;
-  updatedAt: Date;
-  status: string;
-  userId: string;
+  id?: string;
+  name?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  status?: string;
+  userId?: string;
 }
 
 export class Task {

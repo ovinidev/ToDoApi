@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 import { SECRET_KEY } from 'src/app/constants/secretKey';
-import { UserRepository } from 'src/app/repositories/UserRepository';
 import { PrismaService } from 'src/infra/database/prisma/prisma.service';
 import { PrismaUserRepository } from 'src/infra/database/prisma/repositories/PrismaUserRepository';
 
