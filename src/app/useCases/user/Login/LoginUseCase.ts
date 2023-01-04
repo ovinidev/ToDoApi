@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
-import { SECRET_KEY } from 'src/app/constants/secretKey';
-import { UserRepository } from 'src/app/repositories/UserRepository';
-import { LoginUserBody } from 'src/infra/http/dtos/loginUserBody';
+import { SECRET_KEY } from '../../../../app/constants/secretKey';
+import { UserRepository } from '../../../../app/repositories/UserRepository';
+import { LoginUserBody } from '../../../../infra/http/dtos/loginUserBody';
 
 @Injectable()
 export class LoginUseCase {
