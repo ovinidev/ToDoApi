@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TasksRepository } from 'src/app/repositories/TasksRepository';
+import { TasksRepository } from '../../../../app/repositories/TasksRepository';
 
 @Injectable()
 export class FindTaskUseCase {

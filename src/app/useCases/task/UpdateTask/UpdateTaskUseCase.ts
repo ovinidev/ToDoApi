@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { TasksRepository } from 'src/app/repositories/TasksRepository';
-import { UpdateTaskBody } from 'src/infra/http/dtos/updateTaskBody';
+import { TasksRepository } from '../../../../app/repositories/TasksRepository';
+import { UpdateTaskBody } from '../../../../infra/http/dtos/updateTaskBody';
 
 @Injectable()
 export class UpdateTaskUseCase {
@@ -8,5 +8,7 @@ export class UpdateTaskUseCase {
 
   async execute(taskId: string, taskData: UpdateTaskBody) {
     await this.taskRepository.update(taskId, taskData);
+
+    return taskData;
   }
 }

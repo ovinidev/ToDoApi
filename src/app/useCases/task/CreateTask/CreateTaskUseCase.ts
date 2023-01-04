@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TasksRepository } from 'src/app/repositories/TasksRepository';
+import { TasksRepository } from '../../../../app/repositories/TasksRepository';
 
 export interface CreateTaskProps {
   name: string;
@@ -10,7 +10,9 @@ export interface CreateTaskProps {
 export class CreateTaskUseCase {
   constructor(private taskRepository: TasksRepository) {}
 
-  async execute(data: CreateTaskProps): Promise<void> {
+  async execute(data: CreateTaskProps): Promise<CreateTaskProps> {
     await this.taskRepository.create(data);
+
+    return data;
   }
 }
