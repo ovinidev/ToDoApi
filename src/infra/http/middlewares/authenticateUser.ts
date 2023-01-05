@@ -24,7 +24,9 @@ export async function authenticateUser(
 
     const { sub: id } = verify(token, SECRET_KEY) as ITokenVerified;
 
-    const userRepository = new PrismaUserRepository(new PrismaService());
+    const prismaService = new PrismaService();
+
+    const userRepository = new PrismaUserRepository(prismaService);
 
     const userAlreadyExists = await userRepository.findById(id);
 
