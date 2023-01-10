@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 import { SECRET_KEY } from 'src/app/constants/secretKey';
+import { prismaService } from 'src/app/services/prismaService';
 import { PrismaService } from 'src/infra/database/prisma/prisma.service';
 import { PrismaUserRepository } from 'src/infra/database/prisma/repositories/PrismaUserRepository';
 
@@ -23,8 +24,6 @@ export async function authenticateUser(
     const [, token] = authHeader.split(' ');
 
     const { sub: id } = verify(token, SECRET_KEY) as ITokenVerified;
-
-    const prismaService = new PrismaService();
 
     const userRepository = new PrismaUserRepository(prismaService);
 

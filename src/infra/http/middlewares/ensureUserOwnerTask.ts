@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+import { prismaService } from 'src/app/services/prismaService';
 import { PrismaService } from 'src/infra/database/prisma/prisma.service';
 import { PrismaTaskRepository } from 'src/infra/database/prisma/repositories/PrismaTaskRepository';
 
@@ -11,7 +12,7 @@ export async function ensureUserOwnerTask(
     const { taskId } = req.params;
     const { id } = req.user;
 
-    const taskRepository = new PrismaTaskRepository(new PrismaService());
+    const taskRepository = new PrismaTaskRepository(prismaService);
 
     const task = await taskRepository.findById(taskId);
 
