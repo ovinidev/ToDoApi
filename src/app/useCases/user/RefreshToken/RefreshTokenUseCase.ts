@@ -21,6 +21,6 @@ export class RefreshTokenUseCase {
       expiresIn: '1h',
     });
 
-    return { token };
+    return { token, refreshToken: refresh_token };
   }
 }

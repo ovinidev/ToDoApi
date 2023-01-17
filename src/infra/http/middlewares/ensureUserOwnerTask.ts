@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 import { prismaService } from 'src/app/services/prismaService';
-import { PrismaService } from 'src/infra/database/prisma/prisma.service';
 import { PrismaTaskRepository } from 'src/infra/database/prisma/repositories/PrismaTaskRepository';
 
 export async function ensureUserOwnerTask(

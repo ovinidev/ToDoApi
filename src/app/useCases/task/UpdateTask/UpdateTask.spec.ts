@@ -22,6 +22,8 @@ describe('Update task', () => {
       status: 'done',
     });
 
+    console.log({ taskToBeCreate, taskEdited });
+
     expect(taskToBeCreate).not.toEqual(taskEdited);
   });
 });

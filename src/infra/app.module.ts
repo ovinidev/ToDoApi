@@ -10,6 +10,7 @@ import { ensureUserOwnerTask } from './http/middlewares/ensureUserOwnerTask';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(authenticateUser).forRoutes('tasks');
+    consumer.apply(authenticateUser).forRoutes('users');
     consumer.apply(ensureUserOwnerTask).forRoutes('tasks/:taskId');
   }
 }

@@ -16,7 +16,7 @@ export class LoginController {
           status: err.status,
           error: err.message,
         },
-        err.status,
+        400,
       );
     }
   }

@@ -23,10 +23,16 @@ export class TaskRepositoryInMemory implements TasksRepository {
   }
 
   async update(taskId: string, task: Task): Promise<void> {
-    const tasks = this.tasks.filter((task) => task.id !== taskId);
+    const tasksToBeNotEdited = this.tasks.filter((task) => task.id !== taskId);
 
-    this.tasks = tasks;
+    this.tasks = tasksToBeNotEdited;
 
-    this.tasks.push(task);
+    const taskEdited = {
+      ...task,
+      userId: '1234',
+      id: '123',
+    } as Task;
+
+    this.tasks.push(taskEdited);
   }
 }
