@@ -3,7 +3,7 @@ import { CreateTaskUseCase } from 'src/app/useCases/task/CreateTask/CreateTaskUs
 import { DeleteTaskUseCase } from 'src/app/useCases/task/DeleteTask/DeleteTaskUseCase';
 import { FindTaskUseCase } from 'src/app/useCases/task/FindTasks/FindTasksUseCase';
 import { UpdateTaskUseCase } from 'src/app/useCases/task/UpdateTask/UpdateTaskUseCase';
-import { FindUserUseCase } from 'src/app/useCases/user/FindUserData/FindUserDataUseCase';
+import { FindUserUseCase } from 'src/app/useCases/user/FindUser/FindUserUseCase';
 import { LoginUseCase } from 'src/app/useCases/user/Login/LoginUseCase';
 import { RefreshTokenUseCase } from 'src/app/useCases/user/RefreshToken/RefreshTokenUseCase';
 import { CreateUserUseCase } from '../../app/useCases/user/CreateUser/CreateUserUseCase';

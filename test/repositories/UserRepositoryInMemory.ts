@@ -1,16 +1,15 @@
-import { randomUUID } from 'crypto';
 import { User } from 'src/app/entities/user/user';
 import { UserRepository } from 'src/app/repositories/UserRepository';
 
 export class UserRepositoryInMemory implements UserRepository {
   public users: User[] = [];
 
-  async create(user: User): Promise<void> {
+  async create({ email, name, password }: User): Promise<void> {
     const userToCreate = {
-      id: randomUUID(),
-      name: user.name,
-      email: user.email,
-      password: user.password,
+      id: '123456',
+      name,
+      email,
+      password,
     } as User;
 
     this.users.push(userToCreate);

@@ -1,6 +1,6 @@
 import { Controller, Get, HttpException, Req } from '@nestjs/common';
 import { Request } from 'express';
-import { FindUserUseCase } from 'src/app/useCases/user/FindUserData/FindUserDataUseCase';
+import { FindUserUseCase } from 'src/app/useCases/user/FindUser/FindUserUseCase';
 import { UserViewModel } from '../../viewModels/UserViewModel';
 
 @Controller('users')
