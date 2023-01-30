@@ -4,10 +4,10 @@ import { UpdateTaskBody } from '../../../../infra/http/dtos/updateTaskBody';
 
 @Injectable()
 export class UpdateTaskUseCase {
-  constructor(private taskRepository: TasksRepository) {}
+  constructor(private tasksRepository: TasksRepository) {}
 
   async execute(taskId: string, taskData: UpdateTaskBody) {
-    await this.taskRepository.update(taskId, taskData);
+    await this.tasksRepository.update(taskId, taskData);
 
     return taskData;
   }

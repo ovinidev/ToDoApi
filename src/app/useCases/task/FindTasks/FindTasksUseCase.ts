@@ -3,9 +3,9 @@ import { TasksRepository } from '../../../../app/repositories/TasksRepository';
 
 @Injectable()
 export class FindTaskUseCase {
-  constructor(private taskRepository: TasksRepository) {}
+  constructor(private tasksRepository: TasksRepository) {}
 
   async execute(userId: string) {
-    return await this.taskRepository.findAll(userId);
+    return await this.tasksRepository.findAll(userId);
   }
 }

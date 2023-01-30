@@ -8,10 +8,10 @@ export interface CreateTaskProps {
 
 @Injectable()
 export class CreateTaskUseCase {
-  constructor(private taskRepository: TasksRepository) {}
+  constructor(private tasksRepository: TasksRepository) {}
 
   async execute(data: CreateTaskProps): Promise<CreateTaskProps> {
-    await this.taskRepository.create(data);
+    await this.tasksRepository.create(data);
 
     return data;
   }

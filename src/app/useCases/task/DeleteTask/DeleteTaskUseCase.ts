@@ -3,9 +3,9 @@ import { TasksRepository } from '../../../../app/repositories/TasksRepository';
 
 @Injectable()
 export class DeleteTaskUseCase {
-  constructor(private taskRepository: TasksRepository) {}
+  constructor(private tasksRepository: TasksRepository) {}
 
   async execute(taskId: string) {
-    await this.taskRepository.delete(taskId);
+    await this.tasksRepository.delete(taskId);
   }
 }
